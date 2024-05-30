@@ -1,4 +1,7 @@
 on: 
+    push:
+        branches:
+          - "ryc0051-patch-1"
     pull_request: 
       branches: 
       - main
