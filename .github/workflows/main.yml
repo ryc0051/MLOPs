@@ -15,4 +15,4 @@ jobs:
         - name: Run bash ls
           run: ls
         - name: Execute Makefile
-            - run: make env
+          run: make env
