@@ -17,5 +17,5 @@ jobs:
         - name: Execute Makefile
           run: make env
         - name: "Execute file"
-          run : test.py
+          run : make run
 
