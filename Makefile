@@ -8,7 +8,7 @@ env:
 	. env/bin/activate
 
 	pip install --upgrade pip &&\ 
-	 pip -r requirements.txt
+	pip -r requirements.txt
 
 run:
 	$(PYTHON) $(SCRIPT)

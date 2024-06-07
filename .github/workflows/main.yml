@@ -10,14 +10,10 @@ jobs:
     build:
       runs-on: ubuntu-latest
       steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
-        - name: Run bash ls
-          run: ls
-        - name: Execute Makefile
+        - name: Make Environment
           run: make env
-        - name: "Lint"
+        - name: Lint file
           run: make lint
-        - name: "Execute file"
+        - name: Execute file
           run : make run
 
