@@ -4,7 +4,7 @@ SCRIPT = test.py
 .PHONY: run lint env clean
 
 env:
-	$(PYTHON) -m venv env && . env/bin/activate
+	$(PYTHON) -m venv env
 run:
 	$(PYTHON) $(SCRIPT)
 lint:
