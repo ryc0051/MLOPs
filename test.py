@@ -1,10 +1,7 @@
-import sys
-import os
-import pandas as pd
-import numpy as np
-import polars as pl
+"""Module providing a function printing python version."""
 
-def printWorld():
+def print_world():
+    """Function printing python version."""
     print("Hello, World!")
 
-printWorld()
+print_world()

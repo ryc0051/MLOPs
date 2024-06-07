@@ -16,6 +16,8 @@ jobs:
           run: ls
         - name: Execute Makefile
           run: make env
+        - name: "Lint"
+          run: make lint
         - name: "Execute file"
           run : make run
 
