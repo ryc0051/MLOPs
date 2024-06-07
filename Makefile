@@ -5,8 +5,7 @@ SCRIPT = test.py
 
 env:
 	$(PYTHON) -m venv env
-	. env/bin/activate &&\
-	pip install --upgrade pip &&\ 
+	. env/bin/activate 
 	pip -r requirements.txt
 
 run:
