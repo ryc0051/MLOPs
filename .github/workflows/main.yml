@@ -10,8 +10,8 @@ jobs:
     build:
       runs-on: ubuntu-latest
       steps:
-        - name: Make Environment
-          run: make env
+        - name: Make Install
+          run: make install
         - name: Lint file
           run: make lint
         - name: Execute file
