@@ -12,8 +12,8 @@ jobs:
       steps:
         - name: Checkout code
           uses: actions/checkout@v2
-     #   - name: Make Install
-     #     run: make install
+        - name: Make Install
+          run: make install
         - name: Lint file
           run: make lint
         - name: Execute file
