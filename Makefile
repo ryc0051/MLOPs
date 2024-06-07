@@ -5,8 +5,7 @@ SCRIPT = test.py
 
 env:
 	$(PYTHON) -m venv env
-	. env/bin/activate && pip install -r requirements.txt
-
+	. env/bin/activate
 run:
 	$(PYTHON) $(SCRIPT)
 lint:
