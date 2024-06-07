@@ -4,14 +4,18 @@ on:
           - "ryc0051-patch-1"
     pull_request: 
       branches: 
-      - main
-      - release/*
+        - main
+        - release/*
 jobs:
-     build:
-       runs-on: ubuntu-latest
-       steps:
-         - name: Checkout code
-           uses: actions/checkout@v2
-         - name: Run Python script
-           run: test.py
-   
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+        - name: Run bash ls
+          run: ls
+        - name: Execute Makefile
+          run: make env
+        - name: "Execute file"
+          run : test.py
+
