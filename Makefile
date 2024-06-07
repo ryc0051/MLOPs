@@ -10,6 +10,6 @@ install:
 run:
 	$(PYTHON) $(SCRIPT)
 lint:
-	$(PYTHON) -m pylint $(SCRIPT)
+	env/bin/$(PYTHON) -m pylint $(SCRIPT)
 clean:
 	rm -rf env
