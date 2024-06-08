@@ -4,4 +4,9 @@ def print_world():
     """Function printing python version."""
     print("Hello, World!")
 
-print_world()
+if __name__ == "__main__":
+    def main():
+     """Main function."""
+    print_world()
+
+
