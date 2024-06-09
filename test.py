@@ -1,6 +1,6 @@
 """Module providing a function printing python version."""
-from langchain_openai import OpenAI
 import os
+from langchain_openai import OpenAI
 OpenAPIKey = os.environ.get('OPENAI_API_KEY')
 
 def print_world():
