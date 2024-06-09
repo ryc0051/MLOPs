@@ -1,7 +1,10 @@
 PYTHON = python3
 SCRIPT = test.py
 
-.PHONY: run lint env clean
+.PHONY: run lint env clean install
+
+env :
+	OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
 install:
 	$(PYTHON) -m venv env && \

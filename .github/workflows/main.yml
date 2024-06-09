@@ -16,6 +16,8 @@ jobs:
           run: make install
         - name: Lint file
           run: make lint
+        - name: Environment
+          run: make env
         - name: Execute file
           run : make run
 
