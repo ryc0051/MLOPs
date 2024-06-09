@@ -8,5 +8,5 @@ def print_world():
 
 if __name__ == "__main__":
     def main():
-     """Main function."""
+        "Main function."
     print_world()
