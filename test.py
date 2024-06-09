@@ -5,7 +5,7 @@ OpenAPIKey = os.environ.get('OPENAI_API_KEY')
 
 def print_world():
     """Function printing python version."""
-    llm = OpenAI(model_name="text-ada-001", openai_api_key=OpenAPIKey)
+    llm = OpenAI(model_name="text-davinci-003", openai_api_key=OpenAPIKey)
     print(llm("Tell me a joke about data scientist"))
 
 if __name__ == "__main__":
