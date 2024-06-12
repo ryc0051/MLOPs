@@ -3,9 +3,6 @@ SCRIPT = test.py
 
 .PHONY: run lint env clean install
 
-env:
-    export OPENAI_API_KEY=your_secret_key; command
-
 install:
 	$(PYTHON) -m venv env && \
 	. env/bin/activate && \
