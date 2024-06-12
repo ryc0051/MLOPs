@@ -1,5 +1,6 @@
 """Module providing a function printing python version."""
 import os
+from langchain.chains import create_sql_query_chain
 from langchain_community.utilities import SQLDatabase
 from langchain_openai import ChatOpenAI
 
