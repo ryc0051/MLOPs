@@ -8,7 +8,7 @@ install:
 	. env/bin/activate && \
 	pip install -r requirements.txt
 run:
-	env/bin/$(PYTHON) $(SCRIPT)
+    OPENAI_API_KEY=$(OPENAI_API_KEY) env/bin/$(PYTHON) $(SCRIPT)
 lint:
 	env/bin/$(PYTHON) -m pylint $(SCRIPT)
 clean:
