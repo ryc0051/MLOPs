@@ -1,0 +1,23 @@
+on: 
+    push:
+        branches:
+          - "ryc0051-patch-1"
+    pull_request: 
+      branches: 
+        - main
+        - release/*
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+        - name: Make Install
+          run: make install
+        - name: Lint file
+          run: make lint
+        - name: Execute file
+          run : make run
+          env:
+            OPENAI_API_KEY: ${{ secrets.LangChainLearn }}
+

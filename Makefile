@@ -1,16 +1,15 @@
 PYTHON = python3
 SCRIPT = test.py
 
-.PHONY: run lint env clean
+.PHONY: run lint env clean install
 
-env:
-	$(PYTHON) -m venv env
-	. env/bin/activate
+install:
+	$(PYTHON) -m venv env && \
+	. env/bin/activate && \
 	pip install -r requirements.txt
-
 run:
-	$(PYTHON) $(SCRIPT)
+    OPENAI_API_KEY=$(OPENAI_API_KEY) env/bin/$(PYTHON) $(SCRIPT)
 lint:
-	$(PYTHON) -m pylint $(SCRIPT)
+	env/bin/$(PYTHON) -m pylint $(SCRIPT)
 clean:
 	rm -rf env
