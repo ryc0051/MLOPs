@@ -1,7 +1,7 @@
 on: 
     push:
         branches:
-          - "ryc0051-patch-1"
+          - "Pipeline"
     pull_request: 
       branches: 
         - main
