@@ -26,15 +26,20 @@ prompt = ChatPromptTemplate.from_messages(
 )
 
 chain = prompt | llm
-chain.invoke(
+result = chain.invoke(
     {
         "input_language": "English",
         "output_language": "German",
         "input": "I love programming.",
     }
 )
+print(result.pretty_print())
+
+
+
 
 if __name__ == "__main__":
     def main():
-        "Main function."
-    print_world()
+        """Main function."""
+        print_world()
+    main()
