@@ -3,7 +3,7 @@ name: dotnet Build
 on:
   push:
     branches:
-      - main
+      - GithubLearn
 
 jobs:
   build:
