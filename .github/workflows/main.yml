@@ -19,5 +19,5 @@ jobs:
         - name: Execute file
           run : make run
           env:
-            OPENAI_API_KEY: ${{ secrets.LangChainLearn }}
+            OPENAI_API_KEY: ${{ secrets.LangChainLearn }} 
 
