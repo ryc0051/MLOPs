@@ -1,12 +1,11 @@
 on: 
     push:
         branches:
-          - "ryc0051-patch-1"
+          - "GithubLearn"
     pull_request: 
       branches: 
         - main
         - release/*
-        - "GithubLearn"
 jobs:
     build:
       runs-on: ubuntu-latest
