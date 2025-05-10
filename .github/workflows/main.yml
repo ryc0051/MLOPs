@@ -15,6 +15,7 @@ jobs:
         - name: Build docker image
           run: |
             docker build -t my-image .  
+            docker run --name my-container my-image
           env:
             OPENAI_API_KEY: ${{ secrets.LangChainLearn }}
 
