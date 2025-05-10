@@ -6,6 +6,10 @@ on:
       branches: 
         - main
         - release/*
+
+env:
+          OPENAI_API_KEY: ${{ secrets.LangChainLearn }}
+
 jobs:
     build:
       runs-on: ubuntu-latest
@@ -15,7 +19,6 @@ jobs:
         - name: Build docker image
           run: |
             docker build -t my-image .  
-            docker run --name my-container my-image
-          env:
-            OPENAI_API_KEY: ${{ secrets.LangChainLearn }}
+            docker run --name my-container -e OPENAI_API_KEY=${{ secrets.LangChainLearn }} my-image
+
 
