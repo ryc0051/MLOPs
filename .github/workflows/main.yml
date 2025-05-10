@@ -12,12 +12,9 @@ jobs:
       steps:
         - name: Checkout code
           uses: actions/checkout@v2
-        - name: Make Install
-          run: make install
-        - name: Lint file
-          run: make lint
-        - name: Execute file
-          run : make run
+        - name: Build docker image
+          run: |
+            docker build -t my-image .  
           env:
             OPENAI_API_KEY: ${{ secrets.LangChainLearn }}
 
