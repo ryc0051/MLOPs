@@ -16,7 +16,7 @@ jobs:
         - name: Build docker image
           run: |
             docker build -t my-image .  
-        - name: Run container with API key
+        - name: Run container with API key?
           run: |
             docker run --name my-container -e OPENAI_API_KEY=${{secrets.OPENAI_API_KEY}} my-image
 
