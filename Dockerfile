@@ -25,6 +25,6 @@ COPY /app/*.py /app/
 
 
 # Default command (run your Python script directly)
-CMD ["pipenv", "run", "python", "test.py"]
+CMD ["pipenv", "run", "python", "main.py"]
 
 
