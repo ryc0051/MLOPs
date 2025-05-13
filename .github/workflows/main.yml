@@ -16,6 +16,11 @@ jobs:
         - name: Build docker image
           run: |
             docker build -t my-image .  
+        - name: Run Trivy scan
+          uses: aquasecurity/trivy-action@master
+          run: |
+            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image --exit-code 1 --severity HIGH,CRITICAL my-image
+
         - name: Run container with API key?
           run: |
             docker run --name my-container -e OPENAI_API_KEY=${{secrets.OPENAI_API_KEY}} my-image
