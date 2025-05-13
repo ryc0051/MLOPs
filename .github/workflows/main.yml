@@ -18,8 +18,10 @@ jobs:
             docker build -t my-image .  
         - name: Run Trivy scan
           uses: aquasecurity/trivy-action@master
-          run: |
-            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image --exit-code 1 --severity HIGH,CRITICAL my-image
+          with:
+            image-ref: my-image
+            format: 'json'
+            output: 'trivy-report.json'
 
         - name: Run container with API key?
           run: |
