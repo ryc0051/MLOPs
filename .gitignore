@@ -11,6 +11,8 @@
 *.sln.docstates
 /.vscode
 Pipfile.lock
+global.tfvars
+.terraform/*
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
