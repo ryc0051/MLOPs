@@ -8,11 +8,9 @@ terraform {
 }
 
 provider "azurerm" {
-  subscription_id = var.subscription_id
-  client_id       = var.client_id
-  tenant_id       = var.tenant_id
-  client_secret   = var.client_secret
+  subscription_id =  "436ae9d6-a5d3-4a84-851a-19bf6e053931"
   features {}
+  
 }
 
 resource "azurerm_resource_group" "kubernetesragroup" {
