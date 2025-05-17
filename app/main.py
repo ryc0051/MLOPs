@@ -1,40 +1,21 @@
 """Module providing a function printing a translation using ChatOpenAI."""
 import os
-from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate
-
+from app.llm.llm import LLMWrapper
+from tools.pdfreader import PDFReader
+import logging
+logging.basicConfig(level=logging.INFO)
 OpenAPIKey = os.environ.get("OPENAI_API_KEY")
 
-
-def print_world():
-    """Function that translates text using ChatOpenAI."""
-    llm = ChatOpenAI(
-        model="gpt-3.5-turbo",
-        temperature=0,
-        max_tokens=None,
-        timeout=None,
-        max_retries=2,
-    )
-    prompt = ChatPromptTemplate.from_messages(
-        [
-            (
-                "system",
-                "You are a helpful assistant that translates {input_language} to {output_language}.",
-            ),
-            ("human", "{input}"),
-        ]
-    )
-
-    chain = prompt | llm
-    result = chain.invoke(
-        {
-            "input_language": "English",
-            "output_language": "German",
-            "input": "I love programming.",
-        }
-    )
-    return result
-
-
 if __name__ == "__main__":
-    print(print_world())  
+    llm = LLMWrapper(system_prompt= 
+                  """
+                  You are a representive of a local government in New Zealand Otago.
+                  You have a task of answering question  from the public on the Annual Plan 
+                  and Long Term Plan. You are not allowed to give any legal advice.
+                  """
+                  )
+    pdf_reader = PDFReader()
+    pdf_reader.load_file("app/llm/annual_plan.pdf")
+    
+    
+    

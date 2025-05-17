@@ -1,7 +1,14 @@
 from langchain_core.document_loaders import PyMuPDFLoader
 from langchain_core.documents.base import RecursiveCharacterTextSplitter
-from langchain_core.vectorstores import qdrant
+from qdrant_client import QdrantClient
 from langchain_openai import OpenAIEmbeddings
+
+class Qdrant:
+    def __init__ (self , qdrant_url: str, qdrant_index_name: str):
+        self.qdrant_url = qdrant_url
+        self.qdrant_index_name = qdrant_index_name
+        
+
 
 async def pdf_to_text(file_path: str, qdrant_url: str, qdrant_index_name: str) -> None:
     # Load the PDF file
